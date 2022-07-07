@@ -19,6 +19,7 @@ const getPacientesById = async(req, res) => {
 } 
 const patchPaciente = async (req, res) => {
     try {
+        console.log(req.body);
         const paciente = await pacientesService.patchPaciente(req.body);
         res.status(200).send(paciente);
     } catch (err) {

@@ -4,9 +4,10 @@ const express = require('express');
 //criar uma constante que representa nossa aplicação como um todo
 //chamamos "App" e ela recebe a invocação do express
 const app = express();
+app.use(express.json());
 
 
-const db = require('./config/db');
+
 
     //criação de rota
     /*app.get('/pacientes', (request, response, next) => {
@@ -16,7 +17,7 @@ const db = require('./config/db');
 
 //middleware
 require('./routes')(app);
-app.use(express.json());
+
 
 
 //definição da porta em que a aplicação vai rodar

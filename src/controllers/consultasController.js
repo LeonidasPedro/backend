@@ -28,7 +28,9 @@ const patchConsultas = async (req, res) => {
 
 const postConsultas = async (req, res) => {
     try {
+       
         const consulta = await consultasService.postConsultas(req.body);
+        
         res.status(200).send(consulta);
     } catch (err) {
         res.status(500).send(err);

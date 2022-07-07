@@ -19,6 +19,7 @@ const getEnderecosById = async(req, res) => {
 } 
 const patchEndereco = async (req, res) => {
     try {
+        console.log(req.body);
         const endereco = await enderecosService.patchEndereco(req.body);
         res.status(200).send(endereco);
     } catch (err) {
@@ -45,7 +46,6 @@ const deleteEndereco = async (req, res) => {
         res.status(500).send(err);
     }
 }
-
 module.exports.getAllEnderecos = getAllEnderecos;
 module.exports.getEnderecosById = getEnderecosById;
 module.exports.postEnderecos = postEnderecos;

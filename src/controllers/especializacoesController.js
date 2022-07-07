@@ -1,45 +1,45 @@
 
-const pacientesService = require('../services/pacientesService');
+const especializacoesService = require('../services/especializacoesService');
 
 const getAllEspecializacoes = async(req, res) => {
     try {
-        const pacientes = await pacientesService.getAllEspecializacoes();
-        res.status(200).send(pacientes);
+        const especializacao = await especializacoesService.getAllEspecializacoes();
+        res.status(200).send(especializacao);
     } catch (err) {
         res.status(500).send(err);
     }
 }
-const getPacientesById = async(req, res) => {
+const getEspecializacoesById = async(req, res) => {
     try {
-        const pacientes = await pacientesService.getPacientesById(req.params);
-        res.status(200).send(pacientes);
+        const especializacao = await especializacoesService.getEspecializacoesById(req.params);
+        res.status(200).send(especializacao);
     } catch (err) {
         res.status(500).send(err);
     }
 } 
-const patchPaciente = async (req, res) => {
+const patchEspecializacoes = async (req, res) => {
     try {
-        const paciente = await pacientesService.patchPaciente(req.body);
-        res.status(200).send(paciente);
+        const especializacao = await especializacoesService.patchEspecializacoes(req.body);
+        res.status(200).send(especializacao);
     } catch (err) {
         res.status(500).send(err);
     }
 }
 
-const postPaciente = async (req, res) => {
+const postEspecializacoes = async (req, res) => {
     try {
-        const paciente = await pacientesService.postPaciente(req.body);
-        res.status(201).send(paciente);
+        const especializacao = await especializacoesService.postEspecializacoes(req.body);
+        res.status(201).send(especializacao);
     } catch (err) {
         res.status(500).send(err);
     }
 }
-const deletePaciente = async (req, res) => {
+const deleteEspecializacoes = async (req, res) => {
     try {
-        let deletado = await pacientesService.deletePaciente(req.params);
+        let deletado = await especializacoesService.deleteEspecializacoes(req.params);
         let msg = deletado 
-            ? `Paciente ${req.params.id} deletado com sucesso` 
-            : `Não foi encontrado nenhum paciente com o id ${req.params.id} para ser deletado`;
+            ? `Especialização ${req.params.id} deletada com sucesso` 
+            : `Não foi encontrada nenhuma especialização com o id ${req.params.id} para ser deletado`;
         res.status(200).send({ msg });
     } catch (err) {
         res.status(500).send(err);
@@ -47,10 +47,10 @@ const deletePaciente = async (req, res) => {
 }
 
 module.exports.getAllEspecializacoes = getAllEspecializacoes;
-module.exports.getPacientesById = getPacientesById;
-module.exports.postPaciente = postPaciente;
-module.exports.deletePaciente = deletePaciente;
-module.exports.patchPaciente = patchPaciente;
+module.exports.getEspecializacoesById = getEspecializacoesById;
+module.exports.postEspecializacoes = postEspecializacoes;
+module.exports.deleteEspecializacoes = deleteEspecializacoes;
+module.exports.patchEspecializacoes = patchEspecializacoes;
 
 
 

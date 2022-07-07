@@ -21,7 +21,7 @@ const postEnderecos = async (params) => {
             cidade, 
             uf, 
             pais
-        ) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning id`;
+        ) values ($1, $2, $3, $4, $5, $6) returning id`;
     let insert = await db.query(sql, [endereco, numero, cep, cidade, uf, pais]);
     return insert.rows[0];
 } 

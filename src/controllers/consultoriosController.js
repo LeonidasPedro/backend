@@ -1,5 +1,5 @@
 
-const consultoriosService = require('../services/consultoriosService');
+const consultoriosService = require('../services/consultorioService');
 
 const getAllConsultorios = async(req, res) => {
     try {
@@ -11,7 +11,7 @@ const getAllConsultorios = async(req, res) => {
 }
 const getConsultorioById = async(req, res) => {
     try {
-        const consultorios = await consultoriosService.getConsultorioById(req.params);
+        const consultorios = await consultoriosService.getConsultoriosById(req.params);
         res.status(200).send(consultorios);
     } catch (err) {
         res.status(500).send(err);

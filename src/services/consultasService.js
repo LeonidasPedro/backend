@@ -16,6 +16,7 @@ const getConsultasById = async (params) => {
     return consulta.rows;
 }
 const postConsultas = async (params) => {
+    
     let { data_consulta, id_medico, id_paciente } = params;
     let sql = `
         insert into consultas (

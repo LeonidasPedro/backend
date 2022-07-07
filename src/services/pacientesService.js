@@ -45,4 +45,4 @@ module.exports.getAllPacientes = getAllPacientes;
 module.exports.getPacientesById = getPacientesById;
 module.exports.postPaciente = postPaciente;
 module.exports.deletePaciente = deletePaciente;
-module.exports.patchPaciente = patchPaciente;
+module.exports.patchPaciente = patchPaciente; 

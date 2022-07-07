@@ -20,7 +20,7 @@ const getPacientesById = async(req, res) => {
 const patchPaciente = async (req, res) => {
     try {
         const paciente = await pacientesService.patchPaciente(req.body);
-        res.status(201).send(paciente);
+        res.status(200).send(paciente);
     } catch (err) {
         res.status(500).send(err);
     }

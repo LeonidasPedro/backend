@@ -1,4 +1,3 @@
-
 const pacientes = require('./pacientesRoute')
 const consultas = require('./consultasRoute');
 const enderecos = require('./enderecosRoute');
@@ -7,8 +6,8 @@ const receitaRemedio = require('./receitaRemediosRoute');
 const receitaRemediosRoute = require('./receitaRemediosRoute');
 const medicos = require('./medicosRoute');
 const receitas = require('./receitasRoute');
-const remedios = require('./remediosRoute')
-
+const remedios = require('./remediosRoute');
+const especializacoes = require('./especializacoesRoute');
 module.exports = (app) => {
     pacientes(app)
     consultas(app)
@@ -18,4 +17,5 @@ module.exports = (app) => {
     medicos(app)
     receitas(app)
     remedios(app)
+    especializacoes(app)
 }

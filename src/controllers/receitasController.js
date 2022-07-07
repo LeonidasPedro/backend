@@ -4,7 +4,6 @@ const receitasService = require('../services/receitasService');
 const getAllReceita = async(req, res) => {
     try {
         const receita = await receitasService.getAllReceita();
-        console.log(receita);
         res.status(200).send(receita);
     } catch (err) {
         res.status(500).send(err);
